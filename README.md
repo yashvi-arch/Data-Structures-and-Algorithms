@@ -1,6 +1,3 @@
 Hi! my name is Yashvi and I am currently actively working towards improving my data structures and algorithm skills.
-<img width="625" height="284" alt="image" src="https://github.com/user-attachments/assets/690df9a7-c758-48a4-8e8d-45b0b749f606" />
-
-
-This is how my leetcode profile currently looks like.
-Thankyou!
+This is how my leetcode profile currently looks like:
+<img width="625" height="284" alt="image" src="https://github.com/user-attachments/assets/5b6a2e77-e9d4-47e4-b275-f4a0cfc7ba80" /> thankyou!
