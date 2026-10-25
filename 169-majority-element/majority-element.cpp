@@ -2,19 +2,22 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
         int n=nums.size();
-        unordered_map<int,int>freq;
-        for(int i=0;i<n;i++){
-            freq[nums[i]]++; //freq store krli map mein
-        }
-        int ans=0;
-        int maxi=0;
-        for(auto it:freq){
-            if(it.second>maxi){
-                maxi=it.second;
-                ans=it.first;
+        sort(nums.begin(),nums.end());
+        int test=floor(n/2);
+        int cnt=1;
+        for(int i=1;i<n;i++){
+            if(nums[i]==nums[i-1]){
+                cnt++;
+            }else{
+                cnt=1;
             }
+            if(cnt>test){
+                return nums[i];
+
+            }
+
         }
-        return ans;
+        return nums[0];
         
     }
 };
