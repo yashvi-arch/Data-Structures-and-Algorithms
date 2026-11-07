@@ -3,18 +3,25 @@ public:
     vector<int> findPeakGrid(vector<vector<int>>& mat) {
         int m=mat.size();
         int n=mat[0].size();
-
-        for(int row=0;row<m;row++){
-            for(int col=0;col<n;col++){
-
-                if((row==0 || mat[row][col]>mat[row-1][col]) &&
-                   (row==m-1 || mat[row][col]>mat[row+1][col]) &&
-                   (col==0 || mat[row][col]>mat[row][col-1]) &&
-                   (col==n-1 || mat[row][col]>mat[row][col+1])){
-                    return {row,col};
+        int low=0;
+        int high=n-1;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            int till_max=0;
+            for(int i=0;i<m;i++){
+                if(mat[i][mid]>mat[till_max][mid]){
+                    till_max=i;
                 }
+            }
+            if(mid>0 && mat[till_max][mid]<mat[till_max][mid-1]){
+                high=mid-1;
+            }else if(mid<n-1 && mat[till_max][mid]<mat[till_max][mid+1]){
+                low=mid+1;
+            }else{
+                return {till_max,mid};
             }
         }
         return {};
+        
     }
 };
